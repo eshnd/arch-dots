@@ -1,0 +1,53 @@
+{
+    "layer": "top",
+    "modules-left": ["hyprland/workspaces", "hyprland/mode", "hyprland/window"],
+    "modules-center": ["custom/combined-time-weather"],
+    "modules-right": ["pulseaudio", "memory", "cpu"],
+    "hyprland/window": {
+        "max-length": 50
+    },
+    "workspaces": {
+    "format": "{name}",
+    "format-icons": ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
+    "on-click": "hyprctl dispatch workspace {name}",
+    "active-workspace-css-class": "active-workspace"
+  },
+    "clock": {
+        "format": "{:%a, %d. %b  %H:%M}",
+        "tooltip": false
+    },
+    "memory": {
+        "interval": 30,
+        "format": "{used:0.1f}G/{total:0.1f}G "
+    },
+    "cpu": {
+        "interval": 10,
+        "format": "{}% ",
+        "max-length": 10
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "scroll-step": 1,
+        "on-click": "pavucontrol"
+    },
+    "custom/weather": {
+        "tooltip": false,
+        "exec": "curl 'https://wttr.in/Collin?format=1'",
+        "interval": 800
+    },
+    "custom/combined-time-weather": {
+        "exec": "echo \"$(date +'%a, %d. %b  %H:%M')  $(curl -s 'https://wttr.in/Collin?format=1')\"",
+        "interval": 60
+    }
+}

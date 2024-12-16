@@ -1,0 +1,113 @@
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 9pt;
+  color: white;
+  padding-top: 2.5px;
+  padding-bottom: 2.5px;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  text-shadow: none;
+  transition-duration: 0s;
+}
+
+window#waybar {
+  background: transparent;  /* Make the Waybar background transparent */
+  padding: 0.5rem;  /* Adds some padding around the Waybar */
+}
+
+#window,
+#memory,
+#disk,
+#pulseaudio,
+#custom-weather,
+#cpu,
+#custom-combined-time-weather {  /* Adding the combined time-weather box */
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 0.6rem; /* Rounded corners for each module */
+  margin: 0.3rem; /* Adds spacing between each module */
+  background: rgb(20, 20, 20); /* Light transparent background for contrast */
+}
+
+#custom-weather {
+  padding-left: 2rem;
+}
+
+#workspaces {  /* Adding the combined time-weather box */
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 0.6rem; /* Rounded corners for each module */
+  margin: 0.3rem; /* Adds spacing between each module */
+  background: rgb(20, 20, 20); /* Light transparent background for contrast */
+}
+
+#workspaces button {
+  background: rgb(20, 20, 20);
+}
+
+#workspaces button.active {
+  background: #b6412d;
+  border-radius: .6rem;
+}
+
+#clock {
+  border-radius: 0.6rem; /* Round the corners of the clock */
+  background: rgb(20, 20, 20);
+}
+
+#pulseaudio {
+  border-radius: 0.6rem; /* Round the corners of pulseaudio */
+  background: rgb(20, 20, 20);
+}
+
+#memory {
+  border-radius: 0.6rem; /* Round the corners of memory */
+  background: rgb(20, 20, 20);
+}
+
+#cpu {
+  border-radius: 0.6rem; /* Round the corners of CPU */
+  background: rgb(20, 20, 20);
+}
+
+#custom-weather {
+  border-radius: 0.6rem; /* Round the corners of the weather */
+  background: rgb(20, 20, 20);
+}
+
+/* Styling for the combined time and weather box */
+#custom-combined-time-weather {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 0.6rem;
+  background: rgb(20, 20, 20);
+  color: white;
+}
+
+#custom-combined-time-weather span {
+  margin-right: 10px;  /* Space between time and weather */
+}
+
+#custom-combined-time-weather .time {
+  font-size: 1.1rem; /* Slightly larger font for the time */
+}
+
+#custom-combined-time-weather .weather {
+  font-size: 1rem; /* Slightly smaller font for weather */
+}
+
+/* Optional: Add hover effects for better interactivity */
+#window:hover, 
+#memory:hover, 
+#disk:hover, 
+#pulseaudio:hover, 
+#custom-weather:hover, 
+#cpu:hover,
+#custom-combined-time-weather:hover { /* Adding hover effect for the new combined time-weather box */
+  background: rgb(20, 20, 20); /* Slightly darker hover effect */
+}
+
+#workspaces button.active-workspace {
+  font-weight: bold;
+}
