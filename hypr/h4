@@ -23,9 +23,9 @@
 ################
 
 # See https://wiki.hyprland.org/Configuring/Monitors/
-monitor=,preferred,auto,auto
+monitor=HDMI-A-1,1920x1080@60,0x0,0.75
 
-
+monitor = eDP-1, disable
 ###################
 ### MY PROGRAMS ###
 ###################
@@ -100,7 +100,7 @@ decoration {
 
     rounding = 10
 
-    active_opacity = 1
+    active_opacity = 0.85
     inactive_opacity = 0.75
     fullscreen_opacity = 1.0
 
@@ -154,9 +154,13 @@ master {
 misc {
     exec-once = swaybg -i ~/.wp.jpg
     exec-once = waybar
-
+    exec-once = swaync
+    monitor = ,preferred,auto,1.0
+    
 
 }
+# Define a special workspace for scratchpad
+# Assign alacritty to the scratchpad workspace, but only if it's not already running
 
 
 #############
@@ -190,7 +194,13 @@ gestures {
 device {
     name = epic-mouse-v1
     sensitivity = -0.5
+    monitor = DP-1, 2560x1600@240, 0x0, 1
 }
+
+input:touchpad {
+    disable_while_typing = false
+}
+
 
 
 ###################
@@ -202,12 +212,15 @@ $mainMod = ALT # Sets "Windows" key as main modifier
 
 # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
 bind = $mainMod, T, exec, $terminal
+bind = $mainMod, S, exec, hyprshot -m region
+bind = $mainMod, R, exec, mv ~/.config/hypr/hyprland.conf ~/.config/hypr/h4 && mv ~/.config/hypr/h3 ~/.config/hypr/hyprland.conf && mv mv ~/.config/hypr/h4 h3
 bind = $mainMod, F, fullscreen
-bind = $mainMod, R, exec, mv ~/.config/hypr/hyprland.conf ~/.config/hypr/h3 && mv ~/.config/hypr/h2 ~/.config/hypr/hyprland.conf && mv ~/.config/hypr/h3 ~/.config/hypr/h2
 bind = $mainMod, Q, killactive,
 bind = $mainMod, M, exit,
-bind = $mainMod, B, exec, google-chrome-stable
-bind = $mainMod, SPACE, exec, rofi -show drun
+bind = $mainMod, D, exec, vesktop 
+bind = $mainMod, B, exec, zen-browser 
+bind = $mainMod SHIFT, P, exec, kitty python
+bind = $mainMod, SPACE, exec, pkill waybar && rofi -show drun && waybar
 bind = $mainMod, V, togglefloating,
 bind = $mainMod, P, pseudo, # dwindle
 bind = $mainMod, J, togglesplit, # dwindle
@@ -247,11 +260,11 @@ bind = $mainMod, S, togglespecialworkspace, magic
 bind = $mainMod SHIFT, S, movetoworkspace, special:magic
 
 # Scroll through existing workspaces with mainMod + scroll
-bind = $mainMod, mouse_down, workspace, e+1
-bind = $mainMod, mouse_up, workspace, e-1
+bind = $mainMod SHIFT, mouse_down, workspace, e+1
+bind = $mainMod SHIFT, mouse_up, workspace, e-1
 
 # Move/resize windows with mainMod + LMB/RMB and dragging
-bindm = $mainMod, mouse:272, movewindow
+bindm = $mainMod, up, movewindow
 bindm = $mainMod, mouse:273, resizewindow
 
 # Laptop multimedia keys for volume and LCD brightness
@@ -286,3 +299,5 @@ windowrulev2 = suppressevent maximize, class:.*
 
 # Fix some dragging issues with XWayland
 windowrulev2 = nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0
+bind = , Print, exec, /home/eshnd/.config/screenshot-gui/screenshot-gui
+windowrulev2 = float, class:^(screenshot-gui)$

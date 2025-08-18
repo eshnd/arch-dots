@@ -2,8 +2,8 @@
   font-family: "JetBrainsMono Nerd Font";
   font-size: 9pt;
   color: white;
-  padding-top: 2.5px;
-  padding-bottom: 2.5px;
+  padding-top: 3px;
+  /* padding-bottom: 3px; */
   border: none;
   border-radius: 0;
   box-shadow: none;
@@ -12,8 +12,8 @@
 }
 
 window#waybar {
-  background: transparent;  /* Make the Waybar background transparent */
-  padding: 0.5rem;  /* Adds some padding around the Waybar */
+  background: rgb(6, 7, 11);  /* Make the Waybar background transparent */
+  padding: 0.5rem; /* Adds some padding around the Waybar*/
 }
 
 #window,
@@ -27,7 +27,7 @@ window#waybar {
   padding-right: 1rem;
   border-radius: 0.6rem; /* Rounded corners for each module */
   margin: 0.3rem; /* Adds spacing between each module */
-  background: rgb(20, 20, 20); /* Light transparent background for contrast */
+  background: rgb(6, 7, 11); /* Light transparent background for contrast */
 }
 
 #custom-weather {
@@ -39,41 +39,71 @@ window#waybar {
   padding-right: 1rem;
   border-radius: 0.6rem; /* Rounded corners for each module */
   margin: 0.3rem; /* Adds spacing between each module */
-  background: rgb(20, 20, 20); /* Light transparent background for contrast */
+  background: rgb(6, 7, 11); /* Light transparent background for contrast */
 }
 
 #workspaces button {
-  background: rgb(20, 20, 20);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background: rgb(6, 7, 11);
 }
 
 #workspaces button.active {
-  background: #b6412d;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background: #1271cb;
   border-radius: .6rem;
 }
 
 #clock {
   border-radius: 0.6rem; /* Round the corners of the clock */
-  background: rgb(20, 20, 20);
+  background: rgb(6, 7, 11);
 }
 
 #pulseaudio {
   border-radius: 0.6rem; /* Round the corners of pulseaudio */
-  background: rgb(20, 20, 20);
+  background: rgb(6, 7, 11);
 }
 
 #memory {
   border-radius: 0.6rem; /* Round the corners of memory */
-  background: rgb(20, 20, 20);
+  background: rgb(6, 7, 11);
 }
+#battery {
+  border-radius: 0.6rem;
+  background: rgb(6, 7, 11);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 0.3rem;
+}
+
+#battery .text {
+  font-size: 1rem;
+  color: white;
+  margin-right: 5px;  /* spacing before icon */
+}
+
+#battery .icon {
+  font-size: 1.2rem;
+  color: white;
+}
+
+
+
+
+#battery:hover {
+  background: rgb(30, 30, 30); /* Slightly darker background on hover */
+}
+
 
 #cpu {
   border-radius: 0.6rem; /* Round the corners of CPU */
-  background: rgb(20, 20, 20);
+  background: rgb(6, 7, 11);
 }
 
 #custom-weather {
   border-radius: 0.6rem; /* Round the corners of the weather */
-  background: rgb(20, 20, 20);
+  background: rgb(6, 7, 11);
 }
 
 /* Styling for the combined time and weather box */
@@ -81,7 +111,7 @@ window#waybar {
   padding-left: 1rem;
   padding-right: 1rem;
   border-radius: 0.6rem;
-  background: rgb(20, 20, 20);
+  background: rgb(6, 7, 11);
   color: white;
 }
 
@@ -105,7 +135,7 @@ window#waybar {
 #custom-weather:hover, 
 #cpu:hover,
 #custom-combined-time-weather:hover { /* Adding hover effect for the new combined time-weather box */
-  background: rgb(20, 20, 20); /* Slightly darker hover effect */
+  background: rgb(6, 7, 11); /* Slightly darker hover effect */
 }
 
 #workspaces button.active-workspace {
