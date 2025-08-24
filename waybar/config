@@ -1,0 +1,14 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 40,
+  "modules-left": [],
+  "modules-center": [],
+  "modules-right": ["custom/date"],
+
+  "custom/date": {
+    "exec": "date +\"%-m/%-d %-I:%M\"",
+    "interval": 30,
+    "tooltip": false
+  }
+}

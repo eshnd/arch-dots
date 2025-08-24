@@ -1,0 +1,19 @@
+#waybar {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+}
+
+/* Clock box */
+#custom-date {
+  background: #1d2021;
+  color: #ffffff;
+  padding: 4px 8px;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 13px;
+  min-width: 56px;
+
+  margin-right: 10px; /* space from right edge */
+  margin-top: 10px;   /* space from top edge */
+  box-shadow: none;
+}
