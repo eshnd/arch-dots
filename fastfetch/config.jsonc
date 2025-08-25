@@ -1,5 +1,4 @@
 {
-  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
     "type": "small",
     "color": {
@@ -13,7 +12,7 @@
   "display": {
     "separator": "",
     "color": {
-      "keys": "1;94",
+      "keys": "1;#8ec07c",
       "separator": "0;94"
     },
     "key": { "width": 10 }
@@ -22,9 +21,9 @@
     {
       "type": "title",
       "color": {
-        "user": "1;94",
+        "user": "1;#8ec07c",
         "at": "0;#ffffff",
-        "host": "1;94"
+        "host": "1;#8ec07c"
       }
     },
     "break",
@@ -47,9 +46,23 @@
     },
     "break",
     {
-      "type":"colors",
-      "symbol":"circle"
-    },
+  "type": "colors",
+  "symbol": "circle",
+  "colors": [
+    "#689d6a", // aqua
+    "#a89984", // gray
+
+    "#928374", // bright gray
+    "#fb4934", // bright red
+    "#b8bb26", // bright green
+    "#fabd2f", // bright yellow
+    "#83a598", // bright blue
+    "#d3869b", // bright purple
+    "#8ec07c", // bright aqua
+    "#ebdbb2"  // fg1
+  ]
+}
+,
     "break"
   ]
 }
